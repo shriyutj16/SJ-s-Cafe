@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SJ's Cafe - Menu</title>
+  <style>
+    /* ======== BASIC RESET ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f3f0;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ======== NAVBAR ======== */
+    header {
+      background-color: #3e2723;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: auto;
+    }
+
+    nav h1 {
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffb300;
+    }
+
+    /* ======== HERO SECTION ======== */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') no-repeat center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    /* ======== MENU SECTION ======== */
+    section {
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #3e2723;
+    }
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .menu-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .menu-content h3 {
+      color: #3e2723;
+      margin-bottom: 10px;
+    }
+
+    .menu-content p {
+      font-size: 15px;
+      color: #666;
+    }
+
+    .menu-content .price {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .order-btn {
+      background-color: #6d4c41;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .order-btn:hover {
+      background-color: #ffb300;
+      color: #3e2723;
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+      background-color: #3e2723;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <header>
+    <nav>
+      <h1>SJ's Cafe ☕</h1>
+      <ul>
+        <li><a href="#coffee">Coffee</a></li>
+        <li><a href="#desserts">Desserts</a></li>
+        <li><a href="#drinks">Drinks</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======== HERO ======== -->
+  <div class="hero">
+    <h2>Welcome to SJ's Cafe</h2>
+    <p>Freshly brewed happiness, one cup at a time.</p>
+  </div>
+
+  <!-- ======== COFFEE MENU ======== -->
+  <section id="coffee">
+    <h2 class="section-title">☕ Coffee Menu</h2>
+    <div class="menu-container">
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Espresso">
+        <div class="menu-content">
+          <h3>Espresso</h3>
+          <p>Strong and rich Italian coffee shot.</p>
+          <p class="price">₹120</p>
+          <button class="order-btn" onclick="orderNow('Espresso')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Cappuccino">
+        <div class="menu-content">
+          <h3>Cappuccino</h3>
+          <p>Perfect blend of espresso, milk, and foam.</p>
+          <p class="price">₹150</p>
+          <button class="order-btn" onclick="orderNow('Cappuccino')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Latte">
+        <div class="menu-content">
+          <h3>Latte</h3>
+          <p>Smooth and creamy with a hint of sweetness.</p>
+          <p class="price">₹170</p>
+          <button class="order-btn" onclick="orderNow('Latte')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== DESSERTS MENU ======== -->
+  <section id="desserts">
+    <h2 class="section-title">🍰 Desserts</h2>
+    <div class="menu-container">
+      <div class="menu-item">
+        <img src="chocolate-cake.jpg" alt="Chocolate Cake">
+        <div class="menu-content">
+          <h3>Chocolate Cake</h3>
+          <p>Rich, moist, and covered in ganache.</p>
+          <p class="price">₹200</p>
+          <button class="order-btn" onclick="orderNow('Chocolate Cake')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="cheese-cake.jpg" alt="Cheesecake">
+        <div class="menu-content">
+          <h3>Cheesecake</h3>
+          <p>Creamy and tangy with a biscuit crust.</p>
+          <p class="price">₹220</p>
+          <button class="order-btn" onclick="orderNow('Cheesecake')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== DRINKS MENU ======== -->
+  <section id="drinks">
+    <h2 class="section-title">🥤 Beverages</h2>
+    <div class="menu-container">
+      <div class="menu-item">
+        <img src="iced-coffee.jpg" alt="Iced Coffee">
+        <div class="menu-content">
+          <h3>Iced Coffee</h3>
+          <p>Cold brew with ice and milk.</p>
+          <p class="price">₹140</p>
+          <button class="order-btn" onclick="orderNow('Iced Coffee')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461" alt="Cold Drink">
+        <div class="menu-content">
+          <h3>Cold Drink</h3>
+          <p>Refreshing carbonated beverage.</p>
+          <p class="price">₹80</p>
+          <button class="order-btn" onclick="orderNow('Cold Drink')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer>
+    <p>© 2025 SJ's Cafe | Designed by Shriyut Jaiswal</p>
+  </footer>
+
+  <!-- ======== JAVASCRIPT ======== -->
+  <script>
+     document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          document
+            .querySelector(link.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+    function orderNow(item) {
+      alert("Thank you for choosing " + item + "! Your order has been placed successfully.");
+    }
+  </script>
+
+</body>
+</html>
